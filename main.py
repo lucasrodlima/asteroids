@@ -8,7 +8,6 @@ def main():
     pygame.init()
 
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-    screen.fill("black")
 
     clock = pygame.time.Clock()
     dt = 0
@@ -23,6 +22,10 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
+
+        player.update(dt)
+
+        screen.fill("black")
 
         player.draw(screen)
 
